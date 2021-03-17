@@ -1,14 +1,14 @@
 programa
 {
 	
-	funcao inicio(){
+	funcao inicio(){
 		
 		
 		cadeia nome
 		inteiro anos 
 		inteiro mes 
 		inteiro dia 
-		 inteiro revercao 
+		 inteiro revercao, revercaoMes, revercaoDias 
 		escreva("Olá, digite seu nome :\n")
 		leia(nome)
 		limpa()
@@ -23,8 +23,11 @@ programa
    						escreva("Sua idade em dias é: ",dia, "\n")
    						escreva("Agora, ", nome, ", se deseja reverter resutado em anos, novamente, digite(1) \n")
    						leia(revercao)
-   						revercao = (dia/365)
-   						escreva("Após reverção, em anos sua idade é :", revercao, " anos")
+   						revercao= (dia/365)
+   						revercaoMes= (dia%365) /30
+   						revercaoDias= (dia%365) %30
+   						escreva("Após reverção, em anos sua idade é :", revercao, " anos, "
+   						+ revercaoMes, " meses e ",revercaoDias ," dias. ")
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -32,7 +35,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 581; 
+ * @POSICAO-CURSOR = 280; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
