@@ -1,17 +1,17 @@
 programa
 {
-	inclua biblioteca Matematica --> mat
+	inclua biblioteca Matematica --> mat
 	
 	funcao inicio()
-	{
-		inteiro fabricacao, impostos, distribuidor
+	{	real fabricacao, impostos, distribuidor
 		
-		//destribuição 0.28 //imposto 0.45 
-		escreva("Digite o custo de valor do caro e calcularemos osimpostos: \n")
+		
+		escreva("Digite o custo de valor do caro e calcularemos os impostos: \n")
 		leia(fabricacao)
-		distribuidor= fabricacao*28/100
-		impostos= fabricacao*45/100
-		escreva("O valor de destribuição é de: ", distribuidor, "\n" 
+		distribuidor= mat.arredondar((fabricacao*0.28), 2 )
+		impostos= mat.arredondar((fabricacao*0.45), 2)
+		escreva("O custo é de: ", fabricacao,"\n" 
+		+ "O valor de destribuição é de: ", distribuidor, "\n" 
 		+ "E o valor de impostos é de: ", impostos ," \n")
 			escreva("O valor final e de: ", fabricacao+distribuidor+impostos)
 	
@@ -22,7 +22,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 513; 
+ * @POSICAO-CURSOR = 260; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
