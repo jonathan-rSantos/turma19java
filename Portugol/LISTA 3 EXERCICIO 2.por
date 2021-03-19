@@ -5,7 +5,7 @@ programa
 	{
 		inteiro soma=0
 		inteiro x
-		escreva("Os numeros multiplos de 3 da contagem de 1 a 500")
+		escreva("Os numeros multiplos de 3 da contagem de 1 a 500 \n")
 
 		para(x=1; x<=500; x++)
 		{
@@ -23,7 +23,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 221; 
+ * @POSICAO-CURSOR = 124; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
