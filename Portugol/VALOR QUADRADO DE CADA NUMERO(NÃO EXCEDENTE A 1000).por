@@ -3,29 +3,24 @@ programa
 	
 	funcao inicio()
 	{
-		real a,b,c,d,f,g,h,i,j
-		escreva("Digite 4 numeros: ")
+		real a,b,c,d,f,g,h,i
+		escreva("Digite 4 numeros:\n ")
+		escreva("Digite o 1° numero: ")
 		leia(a)
-		escreva("Segundo numero: ")
+		escreva("Digite o 2° numero: ")
 		leia(b)
-		escreva("Terceiro numero: ")
+		escreva("Digite o 3° numero: ")
 		leia(c)
-		escreva("Quarto numero: ")
+		escreva("Digite o 4° numero: ")
 		leia(d)
 		f = a*a
 		g = b*b
 		h = c*c
-		i = d*d
-		se (f >=1000){
-		escreva ("Primeiro N° é Maior ou igual a 1000 é\n",f)}
-		senao se (g >=1000){
-		escreva ("Primeiro N° é Maior ou igual a 1000 é\n",g)}
-		senao se (h >=1000){
-		escreva ("Primeiro N° é Maior ou igual a 1000 é\n",h)}
-		senao se (i >=1000){
-		escreva ("Primeiro N° é Maior ou igual a 1000 é\n",i)
-	}
-	senao{ 
+		i = d*d	
+		se (h >=1000){
+		escreva ("O 3° valor do quadrado é Maior ou igual a 1000 é\n",h)}
+
+		senao{ 
 		escreva(f, "/", g ,"/", h, "/", i )
 		}
 	}	
@@ -35,7 +30,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 622; 
+ * @POSICAO-CURSOR = 394; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
