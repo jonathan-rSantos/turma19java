@@ -10,8 +10,7 @@ public class TempoEvento {
 //em uma fábrica expressa em segundos e mostre-o expresso em horas
 //minutos e segundos. 
 
-			int totalSegundos;
-			double horas, minutos, segundos;
+			double totalSegundos, horas, minutos, segundos;
 			
 			
 			System.out.println("Digite o tempo de duração do evento"
@@ -20,7 +19,6 @@ public class TempoEvento {
 			horas = totalSegundos / 3600;
 			minutos = (totalSegundos % 3600) / 60;
 			segundos = (totalSegundos % 3600) % 60;
-			System.out.println(horas + " horas " + minutos 
-					+ " minutos " + segundos + " segundos!");
+			System.out.printf("Horas: %.0f minutos %.0f segundo %.0f" , horas, minutos, segundos);
 	}
 }
