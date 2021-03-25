@@ -22,6 +22,7 @@ public class NotaMedia {
 		int pesoNotas = 2 + 3 + 5;
 		media = (nota1 + nota2 + nota3) / 3;
 		mediaPonderada = (nota1 * 2) + (nota2 * 3) + (nota3 * 5) / pesoNotas;
+		
 		System.out.println("A média é: " + media);
 		System.out.println("A média podenderada é: " + mediaPonderada);
 		
