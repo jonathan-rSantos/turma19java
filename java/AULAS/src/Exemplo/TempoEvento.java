@@ -19,6 +19,6 @@ public class TempoEvento {
 			horas = totalSegundos / 3600;
 			minutos = (totalSegundos % 3600) / 60;
 			segundos = (totalSegundos % 3600) % 60;
-			System.out.printf("Horas: %.0f minutos %.0f segundo %.0f" , horas, minutos, segundos);
+			System.out.printf("Horas: %.0f minutos %.0f segundo %.0f" ,horas, minutos, segundos);
 	}
 }
