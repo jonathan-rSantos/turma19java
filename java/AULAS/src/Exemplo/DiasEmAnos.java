@@ -7,7 +7,6 @@ public class DiasEmAnos {
 	public static void main(String[] args) {
 		
 		Scanner leia = new Scanner(System.in);
-		
 		int idadeDias, idadeAnos, idadeMeses;
 		
 		System.out.println("Digite sua idade apenas em dias totais: ");
