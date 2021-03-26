@@ -6,9 +6,6 @@ public class CalculoDistancia {
 	
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
-//Construa um programa em c que, tendo como dados de entrada dois pontos 
-//quaisquer no plano, P(x1, y1) e P(x2, y2)
-//escreva a distância entre eles. A fórmula
 		int x1, x2, y1, y2, distancia;
 		
 		System.out.println("Digite o valor do 1° ponto x: ");
