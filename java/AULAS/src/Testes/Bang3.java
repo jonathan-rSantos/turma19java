@@ -33,12 +33,12 @@ public class Bang3 {
 				if (debito == 1) {
 					System.out.print("VALOR DO MOVIMENTO:");
 					movimento = leia.nextInt();
-					if(saldo < 0 || movimento > saldo ) {
+					if(saldo < 0 && movimento > saldo ) {
 						System.out.println("SALDO INSUFICIENTE! \n"
 								+ "DESEJA USAR LIMITE DE CONTA CORRENTE\nSEU LIMITE É: "+limiteContaCorrente+ "R$ \n"
 								+ "DIGITE 1 - PARA SIM \n2-PARA SAIR");
 						continuar = leia.nextInt();
-						if(movimento < limiteContaCorrente || movimento < saldo) {
+						if(movimento < limiteContaCorrente && movimento < saldo) {
 							for (int x = 1; x <=10; x++) {
 							if (continuar == 1) {
 							System.out.print("OPERAÇÃO REALIZADA!! \n");
