@@ -7,10 +7,6 @@ public class RepetiçãoEx6 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		
-		//Escrever um programa que receba vários números INTEIRO no teclado. 
-		//E no final imprimir a média dos números múltiplos de 3.
-		//Para sair digitar 0(zero).(DO...WHILE)
-
 		double valores, soma = 0, mediaMultiplos3 =0, contador=0;
 		
 		do {
