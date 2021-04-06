@@ -43,13 +43,13 @@ public class TestaFor {
 		 	System.out.println();
 		 	System.out.printf("Média de salarios: R$ %.2f" , mediaSalario);
 		 	System.out.println();
-		 	System.out.printf("Total filhos: R$ %.2f" , totalFilhos);
+		 	System.out.printf("Total filhos: %.0f filhos" , totalFilhos);
 		 	System.out.println();
-		 	System.out.printf("Média de filhos: R$ %.2f" , mediaFilhos);
+		 	System.out.printf("Média de filhos: %.2f" , mediaFilhos);
 		 	System.out.println("\n");
 		 	System.out.printf("MAIOR SALARIO: %.2f" , maiorSalario );
 		 	System.out.println();
-		 	System.out.printf("Percentual de salario: %.2f " , percentualSalario);
+		 	System.out.printf("Percentual de salario: %.2f %%" , percentualSalario);
 		 	
 	}
 }
