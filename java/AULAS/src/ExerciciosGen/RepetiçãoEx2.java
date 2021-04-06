@@ -19,6 +19,8 @@ public class RepetiçãoEx2 {
 				contadorImpar++;
 			}
 		}
+		System.out.println("Valores pares: " + contadorPar);
+		System.out.println("Valores impares: " + contadorImpar);
 		
 		
 	}
