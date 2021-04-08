@@ -28,19 +28,22 @@ public class Aviao {
 		poltronas-=totalPassageiros;
 	}
 	
-	do {opcao = sc.next().charAt(0);
+	do {
+		opcao = sc.next().charAt(0);
 	if ( opcao == '1') 
 	{
 		System.out.println("TOTAL DE PASSEGEIROS: " + totalPassageiros + "\nPOLTRONAS INOCUPADAS: "+poltronas
 				+ "\n\n\nPORTA SENDO FECHADA!!\nAPERTE O CINTO E VAMOS DECOLAR EM INSTANTES.");
 	}
 	else if (opcao == '2') {
-		System.out.println("OK, REFAREI A PERGUNTA ATÉ QUE SEJA POSSIVEL FECHA-LA!");
-
+		System.out.println("OK, FICARÁ PAUSADO ATÉ QUE SEJÁ DIGITADO (1)"
+				+ "\n1- FECHARA PORTA!!!");
+	
 	}
 	}while ( opcao == '2');
-	}
 
+	
+	}
 
 
 
