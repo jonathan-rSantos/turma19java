@@ -2,7 +2,7 @@ package Entity;
 
 public class Medio extends Estudante{
 
-	private int contadorBoletim=3;
+	private int contadorBoletim;
 
 	public Medio(String matricula, String cpf) {
 		super(matricula, cpf);
@@ -18,7 +18,6 @@ public class Medio extends Estudante{
 	}
 	
 	public void imprimirBoletim(int opcao) {
-		contadorBoletim--;
 		{	System.out.println("BOLETIM\nMATRICULA: " + super.getMatricula() + "\nCPF: " + super.getCpf()
 			+ "\nPONTOS: " + super.getPontos() );
 		}

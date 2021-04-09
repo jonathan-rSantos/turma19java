@@ -16,7 +16,7 @@ public class Pos extends Estudante {
 		this.credito = credito;
 	}
 	
-	public void pedirCreditoPos(int pontos) {
+	public void pedirCreditoPos(double pontos) {
 		if(pontos <=5) {
 		super.incluirPontos(pontos);
 		}

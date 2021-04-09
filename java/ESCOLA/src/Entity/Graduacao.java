@@ -1,22 +1,22 @@
 package Entity;
 
 public class Graduacao extends Estudante{
-	private double bonusGraduacao;
+	private int bonusGraduacao;
 
 	public Graduacao(String matricula, String cpf) {
 		super(matricula, cpf);
-		this.bonusGraduacao = bonusGraduacao;
 	}
 
 	public double getBonusGraduacao() {
 		return bonusGraduacao;
 	}
 
-	public void setBonusGraduacao(double bonusGraduacao) {
+	public void setBonusGraduacao(int bonusGraduacao) {
 		this.bonusGraduacao = bonusGraduacao;
 	}
 	
-	public void usarBonusGraduacao () {
+	public void usarBonusGraduacao (int bonusPontos) {
+		super.incluirPontos(bonusPontos);
 		
 	}
 

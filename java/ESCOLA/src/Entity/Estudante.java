@@ -4,7 +4,7 @@ public class Estudante {
 	//atributos 
 	private String matricula;
 	private String cpf;
-	private double pontos;
+	private int pontos;
 	private boolean status;
 	
 	
@@ -27,7 +27,7 @@ public class Estudante {
 		return cpf;
 	}
 
-	public double getPontos() {
+	public int getPontos() {
 		return pontos;
 	}
 
@@ -43,11 +43,11 @@ public class Estudante {
 	//metodos funcao adicionarNota
 	//metodos funcao tirarNota
 	
-	public void incluirPontos(double pontoAdicionado) {
-		this.pontos += pontoAdicionado;
+	public void incluirPontos(double d) {
+		this.pontos += d;
 	}
 	
-	public void tirarPontos(double pontoTirado) {
+	public void tirarPontos(int pontoTirado) {
 		this.pontos -= pontoTirado;
 	}
 }

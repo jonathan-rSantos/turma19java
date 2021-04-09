@@ -23,7 +23,7 @@ public class Basico extends Estudante {
 	
 	//metodos 
 	
-	public void bonusAniversario(int diaAtual) {
+	public void bonusAniversario(double diaAtual) {
 		if ( diaAniversario == diaAtual) {
 			super.incluirPontos(super.getPontos()*0.10);
 		} //criado
