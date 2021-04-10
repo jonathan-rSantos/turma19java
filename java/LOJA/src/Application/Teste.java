@@ -11,9 +11,9 @@ public class Teste {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		
-		Produto camisa = new Produto("CAMISA" , "XL001", 100.25);
-		Revista revista = new Revista("RevistaVj", "LD302", 9.99, "Folha");
-		Roupa calça = new Roupa("Calça","Cç3021" , 70.50, "Calvin K.");
+		Roupa camisa = new Roupa("CAMISA" , "XL001", 100.25, "Lacoste", 10);
+		Revista revista = new Revista("RevistaVj", "LD302", 9.99, 10, "Folha");
+		Roupa calça = new Roupa("Calça","Cç3021" , 70.50, "Calvin K.", 10);
 		
 		
 		camisa.setValorUnitario(80);

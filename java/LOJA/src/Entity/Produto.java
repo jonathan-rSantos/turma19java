@@ -1,6 +1,6 @@
 package Entity;
 
-public class Produto {
+public abstract class Produto {
 	
 	//atributos
 	private String descricao;
@@ -12,7 +12,7 @@ public class Produto {
 		
 		//construtor
 	//construtor1
-	public Produto(String descricao, String codigo, double valorUnitario) {	
+	public Produto(String descricao, String codigo, double valorUnitario, int qtdeEstoque) {	
 		super(); //classe mãe
 		this.descricao = descricao;
 		this.codigo = codigo;
@@ -21,7 +21,7 @@ public class Produto {
 	
 	//contrutor2
 	
-	public Produto (String codigo, double valorUnitario) {
+	public Produto (String descricao ,String codigo ,double valorUnitario) {
 		super();
 		this.codigo = codigo;
 		this.valorUnitario = valorUnitario;
@@ -68,11 +68,8 @@ public class Produto {
 		return qtdeEstoque;
 	}
 	
-	//encapsulamento - getter and setters
-	//SETTER EXCLUIDO PARA ESTOQUE NÃO SER ALTERADO
-	
 	//public void setQtdeEstoque(int qtdeEstoque) {
-		//this.qtdeEstoque = qtdeEstoque;
+	//this.qtdeEstoque = qtdeEstoque;
 	//}
 	
 	

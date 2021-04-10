@@ -47,7 +47,7 @@ public class TestaFucionario {
 	System.out.println();
 	System.out.println("FOLHA DE PAGAMENTOS");
 	
-	//FOR EACH
+	//FOR EACH   bom para tipo list
 	for (Funcionario func: listaDeFucionario) {
 		System.out.println(func.getNome() + " " + "\nSalario: "+func.salario());
 	}

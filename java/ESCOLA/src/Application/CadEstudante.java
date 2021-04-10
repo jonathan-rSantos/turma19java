@@ -3,6 +3,7 @@ package Application;
 import java.util.Scanner;
 
 import Entity.Basico;
+import Entity.Estudante;
 import Entity.Graduacao;
 import Entity.Medio;
 import Entity.Mestrado;
@@ -11,7 +12,6 @@ import Entity.Pos;
 public class CadEstudante {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
-		
 		
 		
 		char opcao;

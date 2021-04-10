@@ -1,6 +1,6 @@
 package Entity;
 
-public class Estudante {
+public abstract class Estudante {
 	//atributos 
 	private String matricula;
 	private String cpf;
