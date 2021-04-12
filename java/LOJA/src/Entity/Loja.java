@@ -8,8 +8,8 @@ public class Loja extends Produto{
 	
 	
 
-	public Loja(String descricao, String codigo, double valorUnitario, int qtdeEstoque2, String nome, String cnpj) {
-		super(descricao, codigo, valorUnitario, qtdeEstoque2);
+	public Loja(String descricao, String codigo, double valorUnitario, int qtdeEstoque, String nome, String cnpj) {
+		super(descricao, codigo, valorUnitario, qtdeEstoque);
 		this.nome = nome;
 		this.cnpj = cnpj;
 	}

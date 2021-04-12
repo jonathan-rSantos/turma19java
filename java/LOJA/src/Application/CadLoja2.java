@@ -14,9 +14,9 @@ public class CadLoja2 {
 		 
 		do 
 		 {
-			 System.out.println("MENU \nDIGITE A OPÇÃO DESEJADA \n1- INCLUIR EM ESTOQUE 2- RETIRAR DO ESTOQUE 3- VENDA - 4- MOSTRAR ESTOQUE 5- SAIR");
+			 System.out.println("MENU \nDIGITE A OPÇÃO DESEJADA \n1- INCLUIR EM ESTOQUE 2- RETIRAR DO ESTOQUE 3- VENDA 4- SAIR");
 		opcao = sc.next().charAt(0);
-		while (opcao != '1' && opcao != '2' && opcao != '3' && opcao != '4' && opcao != 5) {
+		while (opcao != '1' && opcao != '2' && opcao != '3' && opcao != '4' && opcao != '5') {
 			System.out.println("OPCÃO INVALIDA, DIGITE ENTRE UM NUMERO ENTRE 1 E 5.\n");
 			 System.out.println("MENU \nDIGITE A OPÇÃO DESEJADA \n1- INCLUIR EM ESTOQUE 2- RETIRAR DO ESTOQUE 3- VENDA - 4- MOSTRAR ESTOQUE 5- SAIR");
 				opcao = sc.next().charAt(0);
@@ -25,10 +25,10 @@ public class CadLoja2 {
 			
 			if (opcao == '1') {
 			 prod.cadastroEmEstoque();
-			 
+			 prod.mostrarEstoque();
 			}
 			else if (opcao == '2') {
-				 System.out.println("Quantidade a ser adiocionada: ");
+				 System.out.println("Quantidade a ser retirado: ");
 				 int qtdeAdicionada = sc.nextInt();
 				 prod.tirarEstoque(qtdeAdicionada);
 			}
@@ -36,17 +36,13 @@ public class CadLoja2 {
 				prod.vendaDeItens();
 			}
 			
-			else if (opcao == '4') {
-				prod.vendaDeItens();
-	
-			}
 			
-			System.out.println("DESEJA CONTINUAR? 1-SIM 4- MOSTRAR ESTOQUE 5 - SAIR ");
+			System.out.println("DESEJA CONTINUAR? 1- SIM 4- SAIR ");
 			opcao = sc.next().charAt(0);
 			
 			
 			
-		}while (opcao != '5');
+		 }while (opcao != '4');
 		System.out.println("FIM DE PROGAMA!!!!!");
 		
 		

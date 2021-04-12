@@ -6,7 +6,7 @@ public abstract class Produto {
 	private String descricao;
 	private String codigo;
 	private double valorUnitario;
-	private int qtdeEstoque;
+	protected int qtdeEstoque;
 	
 		
 		

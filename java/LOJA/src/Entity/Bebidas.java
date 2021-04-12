@@ -12,11 +12,11 @@ public class Bebidas extends Produto{
 	
 	Scanner sc = new Scanner (System.in);
 
-	public Bebidas(String descricao, String codigo, double valorUnitario, int qtdeEstoque2) {
-		super(descricao, codigo, valorUnitario, qtdeEstoque2);
+	public Bebidas(String descricao, String codigo, double valorUnitario, int qtdeEstoque) {
+		super(descricao, codigo, valorUnitario, qtdeEstoque);
 		// TODO Auto-generated constructor stub
 	}
-	
+		
 	
 
 	public Bebidas(String descricao, String codigo, double valorUnitario) {
@@ -33,21 +33,21 @@ public class Bebidas extends Produto{
 		Bebidas.marca = marca;
 	}
 	
-	@Override
-	public void incluirEstoque(int valorSerIncluido) { // quantidade de estoque + valor a ser inserido
-		super.incluirEstoque(valorSerIncluido);
+	//@Override
+	//public void incluirEstoque(int valorSerIncluido) { // quantidade de estoque + valor a ser inserido
+		//super.incluirEstoque(valorSerIncluido);
 			
-		}
+		//}
 		//metodos
-	@Override
-	public void tirarEstoque(int valorSerExcluido) {
-			if (super.getQtdeEstoque() >= valorSerExcluido) {
-			super.tirarEstoque(valorSerExcluido);
-			}	
-			else {
-				System.out.println("Estoque indisponivel!");
-			}
-		}
+	//@Override
+	//public void tirarEstoque(int valorSerExcluido) {
+		//	if (super.getQtdeEstoque() >= valorSerExcluido) {
+			//super.tirarEstoque(valorSerExcluido);
+			//}	
+			//else {
+			//	System.out.println("Estoque indisponivel!");
+			//}
+		//}
 	
 
 	
@@ -67,6 +67,8 @@ public class Bebidas extends Produto{
 				double valorUnitario = sc.nextDouble();
 				System.out.println("Digite a quantidade do produto "+ x + ": ");
 				int qtdeDeProdutos = sc.nextInt();
+				
+				super.incluirEstoque(qtdeDeProdutos);
 				
 				bebidas.add(new Bebidas(descricao,codigo,valorUnitario,qtdeDeProdutos));
 				}
@@ -101,7 +103,9 @@ public class Bebidas extends Produto{
 			}
 		}
 	
-	
+	public void carrinho () {
+		
+	}
 	
 	
 }
