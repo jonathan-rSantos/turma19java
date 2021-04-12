@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class Bebidas extends Produto{
-	private static String marca;
+	private static String marca; // METODO STATIC
 	private int qtdeEstoque;
 	
 	

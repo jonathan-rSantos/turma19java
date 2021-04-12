@@ -13,21 +13,14 @@ public class CadLoja {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int quantidade = 0;
+		char opcao = 0;
+		char posicao = 0;
+		double juros = 0;
+		double calculoDesconto = 0;
+		
 		
 		List <Bebidas> bebidas = new ArrayList<>();
 		List <Bebidas> carrinho = new ArrayList<>();
-		
-		Bebidas bebida1 = new Bebidas ("1- Vinho","Vm-suave",27.80, " ", 10);
-		Bebidas bebida2 = new Bebidas ("2- Vinho","Vm-seco",27.00, " ",10);
-		Bebidas bebida3 = new Bebidas ("3- Cachaça","C-2021",15.00," " , 10);
-		Bebidas bebida4 = new Bebidas ("4- Coca-cola","Coca-2l",10.00, " ", 10);
-		Bebidas bebida5 = new Bebidas ("5- Fanta laranja","F-laranja",9.80, " " , 10);
-		Bebidas bebida6 = new Bebidas ("6- Guarana antartica","G-ant",9.80, " " ,10);
-		Bebidas bebida7 = new Bebidas ("7- Jack daniels","J-preta",130.00, " " ,10);
-		Bebidas bebida8 = new Bebidas ("8- Red label","R-lab", 130.80, " " , 10);
-		Bebidas bebida9 = new Bebidas ("9- Blue label","Blu-lab",150.80," ", 10);
-		Bebidas bebida10 = new Bebidas ("10- Black label","Bla-2021", 180.80," " , 10);
-		
 		
 		bebidas.add(0,new Bebidas ("1- Vinho","Vm-suave",27.80, " ", 10));
 		bebidas.add(1,new Bebidas ("2- Vinho","Vm-seco",27.00, " ",10));
@@ -40,52 +33,208 @@ public class CadLoja {
 		bebidas.add(8,new Bebidas ("9- Blue label","Blu-lab",150.80," ", 10));
 		bebidas.add(9,new Bebidas ("10- Black label","Bla-2021", 180.80," " , 10));
 		
-		char opcao;
 		
 		
 		
-		System.out.println("MENU \n 1- adicionar produto");
 		do {
+			System.out.println("MENU LOJA G-3 \n 1- Adicionar produto 2- Sair");
 		opcao = sc.next().charAt(0);
 		if ( opcao == '1')
 		{ 	
 		System.out.println("Catalogo: ");
-		for (Bebidas catalogo : bebidas) {
+		for (Bebidas catalogo : bebidas) 
+		{
 			System.out.println("Descrição: " + catalogo.getDescricao() + " / Codigo: " + catalogo.getCodigo() + " / Valor unitario: " + catalogo.getValorUnitario() 
 			+ " / Marca" + catalogo.getMarca() + " / Quantidade: " + catalogo.getQtdeEstoque());
 		}
-		System.out.println("Deseja iniciar compra?  1- para sim 2- para não");
+		
+		System.out.println("Deseja realizar compra?  1- para sim 2- para não");
 		char iniciar = sc.next().charAt(0);
-		if(iniciar == '1') {
+		if(iniciar == '1') 
+		{
 			System.out.println("Digite a posição de 1 a 10: ");
-			char posicao = sc.next().charAt(0);
+			posicao = sc.next().charAt(0);
 			
-			if(posicao == '1') {
-				System.out.println(bebida1.getDescricao() + " " +bebida1.getValorUnitario());
+			if(posicao == '1') 
+			{
+				System.out.println(bebidas.get(0).getDescricao() + " " +bebidas.get(0).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') 
+				{
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					bebidas.get(0).tirarEstoque(quantidade);
+					carrinho.add(new Bebidas ("Vinho","Vm-suave",27.80, " ", quantidade));
+					
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+					calculoDesconto= (carrinho.get(0).getValorUnitario() * quantidade) * 10.0 / 100 - carrinho.get(0).getValorUnitario();
+				}
+				for(Bebidas c : carrinho) 
+				{
+				System.out.println("Carrinho " + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				}
+				
+			}
+			else if (posicao == '2') {
+				System.out.println(bebidas.get(1).getDescricao() + " " +bebidas.get(1).getValorUnitario());
 				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
 				char carrinho1 = sc.next().charAt(0);
 				if(carrinho1 == '1') {
 					System.out.println("Quantidade: ");
 					quantidade = sc.nextInt();
 					
-					bebida1.tirarEstoque(quantidade);
+					bebidas.get(1).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("Vinho","Vm-suave",27.80, " ", quantidade));
-					
+					carrinho.add(new Bebidas ("2- Vinho","Vm-seco",27.00, " ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
-				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + " " + c.getQtdeEstoque() + c.qtdeCarrinho(quantidade));
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
 				}
 			}
-		}
-		}
+			else if(posicao == '3') {
+				System.out.println(bebidas.get(2).getDescricao() + " " +bebidas.get(2).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') {
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					
+					bebidas.get(2).tirarEstoque(quantidade);
+					
+					carrinho.add(new Bebidas ("Vinho","Vm-suave",27.80, " ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+				}
+				for(Bebidas c : carrinho) {
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				}
+			}
+			else if(posicao == '4') {
+				System.out.println(bebidas.get(3).getDescricao() + " " +bebidas.get(3).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') {
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					
+					bebidas.get(3).tirarEstoque(quantidade);
+					
+					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+				}
+				for(Bebidas c : carrinho) {
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				}
+			}
+			else if(posicao == '5') {
+				System.out.println(bebidas.get(4).getDescricao() + " " +bebidas.get(4).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') {
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					
+					bebidas.get(4).tirarEstoque(quantidade);
+					
+					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+				}
+				for(Bebidas c : carrinho) {
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				}
+			}
+			else if(posicao == '6') {
+				System.out.println(bebidas.get(5).getDescricao() + " " +bebidas.get(5).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') {
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					
+					bebidas.get(5).tirarEstoque(quantidade);
+					
+					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+				}
+				for(Bebidas c : carrinho) {
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				}
+			}
+			else if(posicao == '7') {
+				System.out.println(bebidas.get(6).getDescricao() + " " +bebidas.get(6).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') {
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					
+					bebidas.get(6).tirarEstoque(quantidade);
+					
+					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+				}
+				for(Bebidas c : carrinho) {
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				}
+			}
+			else if(posicao == '8') {
+				System.out.println(bebidas.get(7).getDescricao() + " " +bebidas.get(7).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') {
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					
+					bebidas.get(7).tirarEstoque(quantidade);
+					
+					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+				}
+				for(Bebidas c : carrinho) {
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				}
+			}
+			else if(posicao == '9') {
+				System.out.println(bebidas.get(8).getDescricao() + " " +bebidas.get(8).getValorUnitario());
+				System.out.println("Deseja adicionar ao carrinho? 1- para sim 2- para não");
+				char carrinho1 = sc.next().charAt(0);
+				if(carrinho1 == '1') {
+					System.out.println("Quantidade: ");
+					quantidade = sc.nextInt();
+					
+					bebidas.get(8).tirarEstoque(quantidade);
+					
+					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
+				}
+				for(Bebidas c : carrinho) {
+				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
+				
+				}
 		
-		}while(opcao != '1');
+		}
+			
+			
+			System.out.println("1- Pagar a vista 2- Debito 3- Credito");
+			char pagamento = sc.next().charAt(0);
+			if(pagamento == '1') {
+				System.out.println("NOTA FISCAL");
+				for(Bebidas c : carrinho) {
+					System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade) 
+					+ "\nJuros: " + juros + "\n\nDesconto" + calculoDesconto);
+					
+					}
+			}
+			if (pagamento == '2') {
+				
+			}
+		}
 		
 		System.out.println("Fim de programa ");
 	}
-	
-
+		}while(opcao != '2');
+}
 }
 
 
@@ -100,51 +249,9 @@ public class CadLoja {
 
 
 
-/*
-*/
 
-/*else if (opcao == '2')
-{
-	System.out.println("Descrição: ");
-	String descricao = sc.next();
-	System.out.println("Codigo: ");
-	String codigo = sc.next();
-	System.out.println("Valor unitario: ");
-	double valorUnitario = sc.nextDouble();
-	System.out.println("Marca do produto: ");
-	String marca = sc.next();
-	System.out.println("Quantidade: ");
-	int quantidadeAdicionada = sc.nextInt();
-	
-	newProduct.add(new Bebidas (descricao, codigo, valorUnitario , marca, quantidadeAdicionada));
-}
 
-else if ( opcao == '3')
-{
-	String codigo;
-	char continuar = 0;
-	do {
-		System.out.println("Mostrar carrinho 9 \nVenda iniciada \nInforme codigo do produto: ");
-		System.out.println("Descrição: ");
-		String descricao = sc.next();
-		System.out.println("Codigo: ");
-		codigo = sc.next();
-		System.out.println("Valor unitario: ");
-		double valorUnitario = sc.nextDouble();
-		System.out.println("Marca do produto: ");
-		String marca = sc.next();
-		System.out.println("Quantidade: ");
-		int quantidadeAdicionada = sc.nextInt();
-		newProduct.remove(new Bebidas (descricao, codigo, valorUnitario , marca, quantidadeAdicionada));
-		carrinho.add(new Bebidas (descricao, codigo , valorUnitario , marca, quantidadeAdicionada));
-		
-		System.out.println("Continuar? 1 (sim)  9 ( nao)" );
-		continuar = sc.next().charAt(0);
-		
-	}while(continuar != '9');
-	System.out.println("Carinho");
-	for (Bebidas produtos : carrinho) {
-		System.out.println(produtos.getDescricao() + " "  + produtos.getCodigo() + " " + produtos.getValorUnitario() + " " + produtos.getQtdeEstoque());
-	
-	}
-}*/
+
+
+
+
