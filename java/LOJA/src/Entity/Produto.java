@@ -6,7 +6,7 @@ public abstract class Produto {
 	private String descricao;
 	private String codigo;
 	private double valorUnitario;
-	protected int qtdeEstoque;
+	private int qtdeEstoque;
 	
 		
 		
@@ -17,15 +17,9 @@ public abstract class Produto {
 		this.descricao = descricao;
 		this.codigo = codigo;
 		this.valorUnitario = valorUnitario;
+		this.qtdeEstoque = qtdeEstoque;
 	}
 	
-	//contrutor2
-	
-	public Produto (String descricao ,String codigo ,double valorUnitario) {
-		super();
-		this.codigo = codigo;
-		this.valorUnitario = valorUnitario;
-	}
 	
 	
 	//encapsulamento - getter and setters
@@ -63,15 +57,6 @@ public abstract class Produto {
 		this.valorUnitario = valorUnitario;
 	}
 	
-	//encapsulamento - getter and setters
-	public int getQtdeEstoque() {
-		return qtdeEstoque;
-	}
-	
-	//public void setQtdeEstoque(int qtdeEstoque) {
-	//this.qtdeEstoque = qtdeEstoque;
-	//}
-	
 	
 	//metodos
 	public void incluirEstoque(int valorSerIncluido) { // quantidade de estoque + valor a ser inserido
@@ -87,4 +72,11 @@ public abstract class Produto {
 			System.out.println("Estoque indisponivel!");
 		}
 	}
+	
+	public double qtdeCarrinho (int quantidade) {
+		return valorUnitario * quantidade;
+	}
 }
+
+
+

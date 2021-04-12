@@ -16,10 +16,6 @@ public class Teste {
 		Roupa calça = new Roupa("Calça","Cç3021" , 70.50, "Calvin K.", 10);
 		
 		
-		camisa.setValorUnitario(80);
-		camisa.incluirEstoque(10);
-		revista.incluirEstoque(50);
-		calça.incluirEstoque(20);
 		
 		
 		System.out.println(camisa.getDescricao() + " R$ " + camisa.getValorUnitario() 

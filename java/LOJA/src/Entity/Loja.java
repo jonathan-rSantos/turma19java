@@ -1,6 +1,6 @@
 package Entity;
 
-public class Loja extends Produto{
+public class Loja extends Bebidas{
 
 	private String nome;
 	private String cnpj;
@@ -8,12 +8,16 @@ public class Loja extends Produto{
 	
 	
 
-	public Loja(String descricao, String codigo, double valorUnitario, int qtdeEstoque, String nome, String cnpj) {
-		super(descricao, codigo, valorUnitario, qtdeEstoque);
+	
+	
+	
+	public Loja(String descricao, String codigo, double valorUnitario, String marca, int qtdeEstoque, String nome,
+			String cnpj) {
+		super(descricao, codigo, valorUnitario, marca, qtdeEstoque);
 		this.nome = nome;
 		this.cnpj = cnpj;
 	}
-
+	
 	public String getNome() {
 		return nome;
 	}
@@ -34,8 +38,8 @@ public class Loja extends Produto{
 		//VALOR DESCONTO 10%
 		//VALOR JUROS 10% - 20%
 		//VALOR DAS PARCELAS
-		System.out.println("Estabelecimento: "+getNome()+"\nCnpj: "+getCnpj()+"\nItem: "+getNome()+"\nQuantidade: " + super.getQtdeEstoque() + "\nValor unitario: "
-		+ super.getValorUnitario() +  "\nValor total: ");
+		System.out.println("Estabelecimento: "+getNome()+"\nCnpj: "+getCnpj()+"\nItem: "+ getDescricao() +
+		 "\nValor unitario: " + getValorUnitario() +  "\nValor total: ");
 	
 	}
 	
