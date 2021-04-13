@@ -1,19 +1,14 @@
 package Entity;
 
-public class Loja extends Bebidas{
+public class Loja extends Produto{
 
 	private String nome;
 	private String cnpj;
 
 	
 	
-
-	
-	
-	
-	public Loja(String descricao, String codigo, double valorUnitario, String marca, int qtdeEstoque, String nome,
-			String cnpj) {
-		super(descricao, codigo, valorUnitario, marca, qtdeEstoque);
+	public Loja(String descricao, String codigo, double valorUnitario, int qtdeEstoque, String nome, String cnpj) {
+		super(descricao, codigo, valorUnitario, qtdeEstoque);
 		this.nome = nome;
 		this.cnpj = cnpj;
 	}
@@ -30,6 +25,7 @@ public class Loja extends Bebidas{
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
+	
 	
 	public void emitirNotaFiscal() {
 		//EMISSÃO DE NOTA FISCAL NOME DA LOJA // CNPJ //NUMERO NF //NOME ITEM - **QTDE** - VALOR UNITARIO VALOR TOTAL

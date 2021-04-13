@@ -31,7 +31,7 @@ public class CadLoja {
 		bebidas.add(6,new Bebidas ("7- Jack daniels","J-preta",130.00, " " ,10));
 		bebidas.add(7,new Bebidas ("8- Red label","R-lab", 130.80, " " , 10));
 		bebidas.add(8,new Bebidas ("9- Blue label","Blu-lab",150.80," ", 10));
-		bebidas.add(9,new Bebidas ("10- Black label","Bla-2021", 180.80," " , 10));
+		//bebidas.add(9,new Bebidas ("10- Black label","Bla-2021", 180.80," " , 10));
 		
 		
 		
@@ -103,7 +103,7 @@ public class CadLoja {
 					
 					bebidas.get(2).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("Vinho","Vm-suave",27.80, " ", quantidade));
+					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
 					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
@@ -120,7 +120,7 @@ public class CadLoja {
 					
 					bebidas.get(3).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					carrinho.add(new Bebidas ("4- Coca-cola","Coca-2l",10.00, "", quantidade));
 					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
@@ -137,7 +137,7 @@ public class CadLoja {
 					
 					bebidas.get(4).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					carrinho.add(new Bebidas ("5- Fanta laranja","F-laranja",9.80, " ", quantidade));
 					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
@@ -154,7 +154,7 @@ public class CadLoja {
 					
 					bebidas.get(5).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					carrinho.add(new Bebidas ("6- Guarana antartica","G-ant",9.80, " ", quantidade));
 					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
@@ -171,7 +171,7 @@ public class CadLoja {
 					
 					bebidas.get(6).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					carrinho.add(new Bebidas ("7- Jack daniels","J-preta",130.00, " ", quantidade));
 					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
@@ -188,7 +188,7 @@ public class CadLoja {
 					
 					bebidas.get(7).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					carrinho.add(new Bebidas ("8- Red label","R-lab", 130.80, " ", quantidade));
 					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
@@ -205,35 +205,32 @@ public class CadLoja {
 					
 					bebidas.get(8).tirarEstoque(quantidade);
 					
-					carrinho.add(new Bebidas ("3- Cachaça","C-2021",15.00," ", quantidade));
+					carrinho.add(new Bebidas ("9- Blue label","Blu-lab",150.80," ", quantidade));
 					juros = ((carrinho.get(0).getValorUnitario() * quantidade) * 9.0) / 100;
 				}
 				for(Bebidas c : carrinho) {
 				System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade));
 				
 				}
-		
 		}
-			
-			
-			System.out.println("1- Pagar a vista 2- Debito 3- Credito");
-			char pagamento = sc.next().charAt(0);
-			if(pagamento == '1') {
-				System.out.println("NOTA FISCAL");
-				for(Bebidas c : carrinho) {
-					System.out.println("Carrinho \n" + c.getDescricao() + " " + c.getValorUnitario() + "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: " + c.qtdeCarrinho(quantidade) 
-					+ "\nJuros: " + juros + "\n\nDesconto" + calculoDesconto);
-					
-					}
-			}
-			if (pagamento == '2') {
-				
-			}
 		}
-		
-		System.out.println("Fim de programa ");
 	}
 		}while(opcao != '2');
+		System.out.println("1- Pagar a vista 2- Debito 3- Credito");
+		char pagamento = sc.next().charAt(0);
+		if(pagamento == '1') {
+			System.out.println("NOTA FISCAL");
+			for(Bebidas c : carrinho) {
+				System.out.print("Carrinho \n" + c.getDescricao() + "\nValor: " + c.getValorUnitario() 
+				+ "R$ " + "\nQuantidade: " + c.getQtdeEstoque() + "\nValor total: "
+						+ c.qtdeCarrinho(quantidade) 
+				+ "\nJuros: " + juros + "\nDesconto" + calculoDesconto +  "\n");
+				
+				}
+		}
+		if (pagamento == '2') {
+			System.out.println("Fim de programa ");
+		}
 }
 }
 
