@@ -58,6 +58,18 @@ public abstract class Produto {
 	}
 	
 	
+	public int getQtdeEstoque() {
+		return qtdeEstoque;
+	}
+
+
+
+	public void setQtdeEstoque(int qtdeEstoque) {
+		this.qtdeEstoque = qtdeEstoque;
+	}
+
+
+
 	//metodos
 	public void incluirEstoque(int valorSerIncluido) { // quantidade de estoque + valor a ser inserido
 	  this.qtdeEstoque += valorSerIncluido;

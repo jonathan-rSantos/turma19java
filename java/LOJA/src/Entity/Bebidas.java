@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Bebidas extends Produto{
 	private static String marca; // METODO STATIC
-	private int qtdeEstoque;
 	
 	
 	Scanner sc = new Scanner (System.in);
@@ -13,19 +12,8 @@ public class Bebidas extends Produto{
 	public Bebidas(String descricao, String codigo, double valorUnitario, String marca, int qtdeEstoque) {
 		super(descricao, codigo, valorUnitario, qtdeEstoque);
 		this.marca = marca;
-		this.qtdeEstoque = qtdeEstoque;
 	}
 
-
-	public int getQtdeEstoque() {
-		return qtdeEstoque;
-	}
-
-
-	public void setQtdeEstoque(int qtdeEstoque) {
-		this.qtdeEstoque = qtdeEstoque;
-	}
-	
 	public static String getMarca() {
 		return marca;
 	}
@@ -43,7 +31,7 @@ public class Bebidas extends Produto{
 		//metodos
 	@Override
 	public void tirarEstoque(int valorSerExcluido) {
-		if (getQtdeEstoque() >= valorSerExcluido) {
+		if (super.getQtdeEstoque() >= valorSerExcluido) {
 			super.tirarEstoque(valorSerExcluido);
 			}	
 			else {

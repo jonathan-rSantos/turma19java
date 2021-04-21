@@ -34,8 +34,8 @@ public class Loja extends Produto{
 		//VALOR DESCONTO 10%
 		//VALOR JUROS 10% - 20%
 		//VALOR DAS PARCELAS
-		System.out.println("Estabelecimento: "+getNome()+"\nCnpj: "+getCnpj()+"\nItem: "+ getDescricao() +
-		 "\nValor unitario: " + getValorUnitario() +  "\nValor total: ");
+		System.out.println("Estabelecimento: "+getNome()+"\nCnpj: "+getCnpj()+"\nItem: "+ super.getDescricao() +
+		 "\nValor unitario: " + super.getValorUnitario() +  "\nValor total: " );
 	
 	}
 	
